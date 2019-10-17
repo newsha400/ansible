@@ -3,7 +3,9 @@
   apt: name=npm state=present
 
 - name: Install pm2
-  apt: name=pm2 state=present
+  npm: 
+    name: pm2 
+    global: yes
 
 - name: Install git
   apt: name=git state=present
