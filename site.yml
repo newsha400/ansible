@@ -6,6 +6,13 @@
 
   roles:
     - nginx
+
+- name: Deploy App
+  hosts: apps
+  remote_user: newsha400
+  become: yes
+
+  roles:
     - nodejs
 
  
