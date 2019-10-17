@@ -2,6 +2,7 @@
 - name: Install Nginx
   hosts: nginx
   remote_user: newsha400
+  become: yes
 
   roles:
     - nginx
