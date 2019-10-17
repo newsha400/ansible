@@ -1,0 +1,7 @@
+---
+- name: Install nginx
+  apt: name=nginx state=present
+
+- name: Copy nginx configuration
+  template: src=default.conf dest=/etc/nginx/nginx.conf
+  notify: restart nginx

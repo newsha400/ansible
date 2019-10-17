@@ -1,0 +1,6 @@
+[apps]
+app-1 ansible_host=35.226.234.162
+app-2 ansible_host=34.67.81.141
+
+[nginx]
+nginx-1 ansible_host=35.222.26.237
