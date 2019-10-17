@@ -6,5 +6,6 @@
 
   roles:
     - nginx
+    - nodejs
 
  

@@ -1,0 +1,21 @@
+---
+- name: Install npm
+  apt: name=npm state=present
+
+- name: Install pm2
+  apt: name=pm2 state=present
+
+- name: Install git
+  apt: name=git state=present
+
+- name: Clone git repository
+  git: 
+    rep: https://github.com/newsha400/devops-test.git
+    dest: /home/newsha400
+
+- name: Delete old pm2 process
+  command: pm2 delete index
+  ignore_errors: yes
+
+- name: Start pm2 process
+  command: pm2 start /home/newsha400/devops-test/index.js
