@@ -12,8 +12,8 @@
 
 - name: Clone git repository
   git: 
-    rep: https://github.com/newsha400/devops-test.git
-    dest: /home/newsha400
+    repo: https://github.com/newsha400/devops-test.git
+    dest: /home/newsha400/devops-test
 
 - name: run node in background
   command: /usr/bin/nohup node /home/newsha400/devops-test/index.js &
