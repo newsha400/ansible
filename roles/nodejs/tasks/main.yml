@@ -3,6 +3,7 @@
   apt: name=npm state=present
 
 - name: Install forever
+  become: yes
   npm: 
     name: forever 
     global: yes
