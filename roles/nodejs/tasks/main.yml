@@ -16,8 +16,9 @@
     dest: /home/newsha400
 
 - name: Delete old pm2 process
-  command: pm2 delete index
+  command: pm2 delete /home/newsha400/devops-test/index.js
   ignore_errors: yes
 
 - name: Start pm2 process
   command: pm2 start /home/newsha400/devops-test/index.js
+
