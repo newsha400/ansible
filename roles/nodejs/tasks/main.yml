@@ -17,9 +17,11 @@
     dest: /home/newsha400/devops-test
 
 - name: Forever stopall
+  become: yes
   command: /usr/local/bin/forever stopall
 
 - name: Forever start 
+  become: yes
   command: /usr/local/bin/forever start /home/newsha400/devops-test/index.js
 
 
