@@ -17,25 +17,10 @@
     dest: /home/newsha400/devops-test
 
 - name: Forever stopall
-  become: yes
+  remote_user: newsha400
   command: /usr/local/bin/forever stopall
 
 - name: Forever start 
-  become: yes
+  remote_user: newsha400
   command: /usr/local/bin/forever start /home/newsha400/devops-test/index.js
-
-
-
-
-  
-
-# - name: run node in background
-#   command: /usr/bin/nohup node /home/newsha400/devops-test/index.js &
-
-# - name: Delete old pm2 process
-#   command: pm2 delete /home/newsha400/devops-test/index.js
-#   ignore_errors: yes
-
-# - name: Start pm2 process
-#   command: pm2 start /home/newsha400/devops-test/index.js
 
