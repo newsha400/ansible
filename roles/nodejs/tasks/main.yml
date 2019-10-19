@@ -2,10 +2,10 @@
 - name: Install npm
   apt: name=npm state=present
 
-- name: Install pm2
-  npm: 
-    name: pm2 
-    global: yes
+# - name: Install pm2
+#   npm: 
+#     name: pm2 
+#     global: yes
 
 - name: Install git
   apt: name=git state=present
@@ -15,10 +15,13 @@
     rep: https://github.com/newsha400/devops-test.git
     dest: /home/newsha400
 
-- name: Delete old pm2 process
-  command: pm2 delete /home/newsha400/devops-test/index.js
-  ignore_errors: yes
+- name: run node in background
+  command: /usr/bin/nohup node /home/newsha400/devops-test/index.js &
 
-- name: Start pm2 process
-  command: pm2 start /home/newsha400/devops-test/index.js
+# - name: Delete old pm2 process
+#   command: pm2 delete /home/newsha400/devops-test/index.js
+#   ignore_errors: yes
+
+# - name: Start pm2 process
+#   command: pm2 start /home/newsha400/devops-test/index.js
 
